@@ -16,4 +16,4 @@ RUN chmod -R 777 storage bootstrap/cache
 
 EXPOSE 8080
 
-CMD php -S 0.0.0.0:8080 -t public
+CMD php artisan key:generate --force && php artisan migrate --force && php -S 0.0.0.0:8080 -t public
